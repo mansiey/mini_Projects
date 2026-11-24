@@ -4,6 +4,7 @@ import mongoose from 'mongoose';
 const ownerSchema = new mongoose.Schema({
     name: {
         type: String,
+        unique: true,
         trim: true,
         minlength: 2,
         maxlength: 25,
