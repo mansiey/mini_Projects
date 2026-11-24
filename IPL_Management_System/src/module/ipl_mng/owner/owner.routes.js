@@ -10,19 +10,19 @@ router.post("/", Controller.createOwner);
 
 //2. Get all owners
 
-router.get("/");
+router.get("/", Controller.getAllOwners);
 
 
 //3. get owner by id
 
-router.get("/:id");
+router.get("/:id", Controller.getOwnerById);
 
 
 //4. update owner
 
-router.put("/");
+router.put("/", Controller.updateOwner);
 
 
 //5. delete owner
 
-router.delete("/");
+router.delete("/", Controller.deleteOwner);
