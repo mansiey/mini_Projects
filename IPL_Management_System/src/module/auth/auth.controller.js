@@ -1,4 +1,4 @@
-import APIResponses from "../../src/common/utils/api-res.js";
+import APIResponses from "../../common/utils/api-res.js";
 import * as authService from "./auth.service.js";
 
 const register = async (req, res) => {
@@ -9,7 +9,7 @@ const register = async (req, res) => {
 const login = async (req, res) => {
   const { user, accessToken, refreshToken } = await authService.login(req.body);
 
-  //abb cooki req me hoga ya res me? =? user ne login kar liya toh abb cokkie hum response me denge
+  //abb cooki req me hoga ya res me? => user ne login kar liya toh abb cokkie hum response me denge
   res.cookie('RefreshToken', refreshToken, {
     httpOnly: true,
     secure: true,

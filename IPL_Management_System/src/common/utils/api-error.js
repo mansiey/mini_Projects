@@ -1,6 +1,6 @@
 class ApiError extends Error {
     constructor(statusCode, message){
-        super(meassage);
+        super(message);
         this.statusCode = statusCode;
         this.isOptional = true;
         Error.captureStackTrace(this, this.constructor);

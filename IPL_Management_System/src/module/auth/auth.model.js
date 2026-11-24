@@ -1,4 +1,3 @@
-import { boolean } from 'joi';
 import mongoose from 'mongoose'; 
 import bcrypt from "bcryptjs";
 
@@ -29,7 +28,7 @@ const userSchema = new mongoose.Schema({
         default: 'customer',
     },
     isVerified: {
-        type: boolean,
+        type: Boolean,
         default: false,
     },
 
@@ -55,11 +54,9 @@ const userSchema = new mongoose.Schema({
 
 
 userSchema.pre('save', async function() {
-    if(!this.isModified('password')) return next();
+    if(!this.isModified('password')) return;
 
     this.password = await bcrypt.hash(this.password, 12);
-
-    next();
 })
 
 userSchema.methods.comparePassword = async function(userPassword) {
