@@ -26,3 +26,6 @@ router.put("/", Controller.updateOwner);
 //5. delete owner
 
 router.delete("/", Controller.deleteOwner);
+
+
+export default router;
